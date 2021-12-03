@@ -27,6 +27,11 @@ for(let i=0;i<rows;i++){
         let cell = document.createElement("div");
         cell.setAttribute("class","cell");
         cell.setAttribute("contenteditable","true");
+        cell.setAttribute("spellcheck","false");
+        // Attribues for cell and storage identification
+        cell.setAttribute("rid",i);
+        cell.setAttribute("cid",j);
+
         rowCont.appendChild(cell);
         addListenterForAddressBarDisplay(cell,i ,j);
     }
@@ -40,3 +45,7 @@ function addListenterForAddressBarDisplay(cell,i,j) {
         addressBar.value = `${colId}${rowId}`
     });
 }
+
+// By default click on first cell via DOM
+let firstCell = document.querySelector(".cell");
+firstCell.click();
