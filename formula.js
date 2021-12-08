@@ -5,8 +5,7 @@ for(let i=0;i<rows;i++){
             let address = addressBar.value;
             let [activeCell,cellProp] = getCellAndCellProp(address);
             let enteredData = activeCell.innerText;
-
-            if(enteredData === cellProp.value) return;
+            if(enteredData == cellProp.value) return;
             cellProp.value = enteredData;
 
             removeChildFromParent(cellProp.formula);
